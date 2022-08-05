@@ -1,7 +1,7 @@
 $PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;
 
-$LHS_ParentOU = 'OU=LHS,OU=HS,OU=LISD,DC=ad,DC=lovejoyisd,DC=net'
-$OU_Base = ',OU=Workstations,OU=LHS,OU=HS,OU=LISD,DC=ad,DC=lovejoyisd,DC=net'
+$LHS_ParentOU = 'Parent_Path'
+$OU_Base = 'New_Workstations_Path'
 
 $utilTool
 while ($utilTool -ne 0) {

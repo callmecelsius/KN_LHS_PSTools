@@ -1,8 +1,8 @@
-$LHS_Regex = '10\.(((1)\.(19[2-9]|20[0-7]))|((3)\.(19[2-9]|20[0-7])))\.(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])'
-$Admin_Regex = '10\.(((1)\.(6[4-9]|7[0-9]))|((3)\.(6[4-9]|7[0-9])))\.(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])'
-$Sloan_Regex = '10\.(((1)\.(16[0-9]|17[0-5]))|((3)\.(16[0-9]|17[0-5])))\.(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])'
-$Workstation_OU = "OU=Workstations,OU=LISD,DC=ad,DC=lovejoyisd,DC=net"
-$Staff_OU = “OU=Staff,OU=Workstations,OU=LHS,OU=HS,OU=LISD,DC=ad,DC=lovejoyisd,DC=net”
+$LHS_Regex = 'Campus1_Regex'
+$Admin_Regex = 'AdminBuilding_Regex'
+$Sloan_Regex = 'Campus2_Regex'
+$Workstation_OU = "Workstations_Path"
+$Staff_OU = 'Staff_Path'
 $Building_IP = ''
 
 $createdDate = Read-Host 'Enter time dd/mm/yyyy 00:00:00AM/PM'
@@ -26,7 +26,7 @@ if ($OU_Select -eq 1) {
 }
 elseif ($OU_Select -eq 2) {
     $room = Read-Host 'Room Num'
-    $OU_Destination = “OU=$room,OU=Workstations,OU=LHS,OU=HS,OU=LISD,DC=ad,DC=lovejoyisd,DC=net”
+    $OU_Destination = “OU=$room, $Workstaion_OU”
 }
 $newPC | ForEach-Object {
     if ($_.IPAddress -match $Building_IP) {
